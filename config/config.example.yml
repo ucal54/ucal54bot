@@ -1,0 +1,43 @@
+# Binance Trading Bot Configuration Example
+# Copy this file to config.yml and update with your actual values
+
+# Trading Settings
+trading:
+  symbol: "BTCUSDT"  # Trading pair (must be SPOT)
+  dry_run: true      # Set to false for live trading
+  
+# Strategy Parameters
+strategy:
+  timeframes:
+    fast: "5m"       # Fast timeframe for signals
+    slow: "15m"      # Slow timeframe for confirmation
+  
+  indicators:
+    ema_fast: 50     # Fast EMA period
+    ema_slow: 200    # Slow EMA period
+    rsi_period: 14   # RSI period
+    volume_sma: 20   # Volume SMA period
+  
+  entry:
+    rsi_min: 40      # Minimum RSI for entry
+    rsi_max: 60      # Maximum RSI for entry
+  
+  exit:
+    take_profit_pct: 1.2   # Take profit percentage
+    stop_loss_pct: 0.6     # Stop loss percentage
+    max_duration_minutes: 45  # Maximum trade duration
+
+# Risk Management
+risk:
+  max_risk_per_trade_pct: 1.0  # Maximum % of balance to risk per trade
+  max_open_positions: 1         # Only 1 position at a time
+
+# Bot Settings
+bot:
+  loop_interval_seconds: 5      # How often to check for signals
+  log_level: "INFO"             # DEBUG, INFO, WARNING, ERROR
+  
+# Paths
+paths:
+  log_dir: "logs"
+  trade_log: "trades.csv"
